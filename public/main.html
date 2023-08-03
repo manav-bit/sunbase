@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sunbase</title>
+  <style>
+     table {
+      border-collapse: collapse;
+      width: 100%;
+      border: 1px solid #ccc;
+    }
+
+    th, td {
+      border: 1px solid #ccc;
+      padding: 8px;
+    }
+    #authContainer{
+      display: flex;
+      flex-direction: column;
+      max-width: 200px;
+      position: fixed;
+      left: 45%;
+      top:45%;
+      justify-content: center;
+      
+    }
+    #newcustomerdiv{
+      display: flex;
+      flex-direction: column;
+      max-width: 400px;
+    }
+  </style>
+</head>
+
+<body>
+  
+  <div id="authContainer">
+    
+    <label for="login_id">Login Id:</label>
+    <input type="text" id="login_id" required>
+    <label for="password">Password:</label>
+    <input type="password" id="password" required>
+    <button onclick="authenticateUser()" style="background-color: blue; color:white">Login</button>
+  </div>
+  <button onclick="showcreatecustomerform()" id="showcreatecustomerformbutton" style="display: none;">Add customer</button>
+
+  <div id="customerContainer" style="display: none">
+
+    <h2>Create New Customer</h2>
+    <div id="newcustomerdiv">
+    <label for="first_name">First Name:</label>
+    <input type="text" id="first_name" required>
+    <label for="last_name">Last Name:</label>
+    <input type="text" id="last_name" required>
+    <label for="street">Street:</label>
+    <input type="text" id="street" required>
+    <label for="address">Address:</label>
+    <input type="text" id="address" required>
+    <label for="city">City:</label>
+    <input type="text" id="city" required>
+    <label for="state">State:</label>
+    <input type="text" id="state" required>
+    <label for="email">Email:</label>
+    <input type="email" id="email" required>
+    <label for="phone">Phone:</label>
+    <input type="text" id="phone" required>
+    <button onclick="createCustomer()">Add New Customer</button>
+  </div>
+    
+  </div>
+
+<button onclick="getCustomerList()" style="display:none" id="showgetcustomerlistbutton">Get Customer List</button>
+<button onclick="logout()" style="display: none; color:white; background-color:blue" id="logout">Logout</button>
+  <!-- Add input fields and buttons for updating and deleting customers -->
+  <div id="updateCustomerForm" style="display: none">
+    <h2>Update Customer</h2>
+    <label for="update_uuid">UUID of Customer to Update:</label>
+    <input type="text" id="update_uuid" required>
+    <label for="update_first_name">First Name:</label>
+    <input type="text" id="update_first_name" required>
+    <label for="update_last_name">Last Name:</label>
+    <input type="text" id="update_last_name" required>
+    <label for="update_street">Street:</label>
+    <input type="text" id="update_street" required>
+    <label for="update_address">Address:</label>
+    <input type="text" id="update_address" required>
+    <label for="update_city">City:</label>
+    <input type="text" id="update_city" required>
+    <label for="update_state">State:</label>
+    <input type="text" id="update_state" required>
+    <label for="update_email">Email:</label>
+    <input type="email" id="update_email" required>
+    <label for="update_phone">Phone:</label>
+    <input type="text" id="update_phone" required>
+    <button onclick="updateCustomer()">Update Customer</button>
+  </div>
+
+  <div id="customerList" style="display: none " >
+    <h2>Customer List</h2>
+    <div id="customerListTable" ></div>
+  </div>
+ 
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script src="main.js"></script>
+</body>
+
+</html>
