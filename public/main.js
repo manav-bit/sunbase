@@ -90,7 +90,7 @@ async function authenticateUser() {
         const table = document.createElement('table');
         const tableHeaders = ['First Name', 'Last Name', 'Street', 'Address', 'City', 'State', 'Email', 'Phone', 'Actions'];
         console.log('Before table creation');
-        // Create table header row
+        
         const headerRow = document.createElement('tr');
         tableHeaders.forEach((header) => {
           const th = document.createElement('th');
@@ -99,7 +99,7 @@ async function authenticateUser() {
         });
         table.appendChild(headerRow);
   
-        // Populate table with customer data and buttons
+      
        await customers.forEach((customer) => {
           const row = document.createElement('tr');
           const customerData = [
@@ -118,7 +118,7 @@ async function authenticateUser() {
             row.appendChild(td);
           });
   
-          // Create "Update" button
+         
           const updateButton = document.createElement('button');
           updateButton.textContent = 'Update';
           updateButton.onclick = function () {
@@ -128,7 +128,7 @@ async function authenticateUser() {
           updateTd.appendChild(updateButton);
           row.appendChild(updateTd);
   
-          // Create "Delete" button
+         
           const deleteButton = document.createElement('button');
           deleteButton.textContent = 'Delete';
           deleteButton.onclick = function () {
